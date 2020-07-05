@@ -13,8 +13,3 @@ async function getProducts (callback){
     .catch(err=>err);
 }   
 
-
-// function getProducts (){
-//     return productList;
-// }
-
