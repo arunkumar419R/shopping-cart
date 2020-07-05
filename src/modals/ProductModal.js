@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import Modal from 'react-modal';
 
 export class ProductModal extends Component{
     constructor(props){
@@ -16,11 +15,8 @@ export class ProductModal extends Component{
     }
     
     render(){
-        //this.setState({showModal:this.props.showModal});
         const modalStyles = {
             display : this.props.data.showModal === true ? 'block' : 'none',
-            //display: none; /* Hidden by default */
-            //'position': 'fixed',/* Stay in place */
             zindex: 10, /* Sit on top */
             paddingTop: '100px', /* Location of the box */
             left: 0,
@@ -28,8 +24,6 @@ export class ProductModal extends Component{
             width: '100%', /* Full width */
             height: '100%', /* Full height */
             overlow: 'auto', /* Enable scroll if needed */
-            //backgroundColor: 'rgb(0,0,0)', /* Fallback color */
-            //backgroundColor: 'rgba(0,0,0,0.4)', /* Black w/ opacity */
         }
 
         const modalContent ={
