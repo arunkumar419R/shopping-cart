@@ -39,7 +39,6 @@ export class ProductList extends Component{
 
     addItemToCart = (id)=>{
         let { products:productListClone , finalAmount, finalquantity} = this.state;
-        //const productListClone = this.state.products;
         let addedProduct = this.state.products.find((product)=>product.id === id);
         addedProduct.quantity = addedProduct.quantity+1;
         addedProduct.productTotal = addedProduct.quantity*addedProduct.price;
@@ -52,8 +51,6 @@ export class ProductList extends Component{
 
     handleRemoveItem = (id) =>{
         let { products:productListClone , finalAmount, finalquantity} = this.state;
-
-        // const productListClone = this.state.products;
         let removeProduct = this.state.products.find((product)=>product.id === id);
         if(removeProduct.quantity >0){
         removeProduct.quantity = removeProduct.quantity-1;
@@ -129,7 +126,6 @@ export class ProductList extends Component{
             color: 'white',
             backgroundColor : '#C7506F',
             borderRadius: '2%'
-            //position: 'relative',
           }
 
           const btnClr = {
@@ -140,7 +136,6 @@ export class ProductList extends Component{
               color: 'White',
               borderRadius: '10%',
             border: 'none',
-            //padding: '20px',
             textDecoration: 'none',
             fontSize: '16px',
             margin: '4px 2px',
@@ -155,7 +150,6 @@ export class ProductList extends Component{
             color: 'white',
             borderRadius: '50%',
             border: 'none',
-            //padding: '20px',
             textDecoration: 'none',
             fontSize: '16px',
             margin: '4px 2px',
@@ -179,8 +173,6 @@ export class ProductList extends Component{
 
         return(
             <div class = "container" className = "parent" style = {parent}>
-                
-                {/* <ProductModal showModal = {this.state.showModal} finalAmount = {this.state.finalAmount}></ProductModal> */}
                 <ProductModal data ={{showModal:this.state.showModal,finalAmount:this.state.finalAmount,closeModal:this.closeModal.bind(this)}}></ProductModal>
                 <div className = "body" style = {body}>
                  {this.state.products.map((product,key)=>
@@ -217,14 +209,9 @@ export class ProductList extends Component{
                         <button onClick = {()=>{this.handleModal()}}>checkout</button>
                         </div>
                     </div>
-                    {/* <div className = "footck" style={footck}>
-                    <button onClick = {()=>{this.handleModal()}}>checkout</button>
-                </div> */}
                 </div>
-                {/* <h4 style={{textAlign:"center",textDecoration: "underline"}}>Shopping cart</h4> */}
             </div>
             </div>
-            
         )
     }
     
